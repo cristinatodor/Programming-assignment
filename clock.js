@@ -31,14 +31,21 @@ class Clock{
 		return this.clocktype;
 	}
 	
+	setHoursOffset(hoursOffset) {
+		this.hoursOffset = hoursOffset;
+	}
+	getHoursOffset() {
+		return this.hoursOffset;
+	}
 	
-	draw(p, hoursOffset) {
+	
+	draw(p) {
 
 		p.translate(p.width / 2.0, p.height / 2.0);
 
-		
-		var date = new Date(),
-		hours = date.getHours() + hoursOffset,
+		var date = new Date();
+		date.setTime(date.getTime() + this.getHoursOffset()*3600*1000);
+		var hours = date.getHours(),
 		minutes = date.getMinutes(),
 		seconds = date.getSeconds(),
 		ms = date.getMilliseconds(),
@@ -69,7 +76,7 @@ class Clock{
 				p.fill('red');
 			}
 			else {
-				p.fill(255);
+				p.fill(this.getClockFill());
 			}
 			if (i % 5 == 4) {
 				p.ellipse(v.x, v.y, 5, 5);
@@ -82,7 +89,7 @@ class Clock{
 		
 		// Numbers
 		p.textSize(25);
-		p.fill(0);
+		p.fill(this.getTextFill());
 		p.noStroke();
 		for (i = 0; i < 12; i++) {
 			v = p5.Vector.fromAngle((i + 1) / 12.0 * p.TAU - p.HALF_PI);
@@ -152,7 +159,7 @@ class Clock{
 		// Date box
 		p.textSize(13);
 		
-		p.fill(120);
+		p.fill('#ff9999');
 		p.stroke(0);
 		p.strokeWeight(1);
 		p.rect(-40, 30, 85, 30, 10);
@@ -160,13 +167,13 @@ class Clock{
 		p.fill(0);
 		p.noStroke();
 		p.text(day, -30, 50);
-		p.text(".", -15, 50);
-		p.text(month+1, -15, 50);
-		p.text(".", 6, 50);
-		p.text(year, 10, 50);
+		p.text(".", -16, 50);
+		p.text(month+1, -14, 50);
+		p.text(".", 1, 50);
+		p.text(year, 6, 50);
 		
 		//AM/PM box
-		p.fill(120); 
+		p.fill('#ff9999'); 
 		p.stroke(0);
 		p.strokeWeight(1);
 		p.rect(-18, -42, 35, 22, 10);
@@ -216,153 +223,4 @@ class Clock{
 	}
 	
 	
-}
-
-var sketch1 = function(p) {
-	p.x = 100;
-	p.y = 100;
-	var c = new Clock();
-	var buton;
-	
-	p.setup = function() {
-		var mc = p.createCanvas(400, 400);
-		mc.parent('div1');
-		p.textFont('Futura, Avenir, Helvetica, Georgia, Sans-Serif');
-
-		c.setBackgroundFill(192);
-		c.setClockFill(p.color('#F9F8FA'));
-		c.setTextFill(0);
-		c.setClockType('a');
-		
-		/*
-		buton = p.createButton("Clock Type"); 
-		buton.parent('div1');
-		buton.position(120, 360);
-		
-		buton.mousePressed(() => {clockType(1)});*/
-		
-		
-		var dropdown = p.createSelect(); 
-		dropdown.option('Clasic','1');
-		dropdown.option('Retro','2');
-		dropdown.option('Astro','3');
-		dropdown.option('Turbo','4');
-		dropdown.parent('div1');
-		dropdown.position(120, 360);
-		dropdown.changed(() => {clockStyle(dropdown.selected())});
-		
-		}
-	p.draw = function() {	
-		c.draw(p, 7);
-	}
-	p.getClock = function() {	
-		return c;
-	}
-}
-
-var sketch2 = function(p) {
-	p.x = 100;
-	p.y = 100;
-	var c = new Clock();
-	var buton;
-	
-	p.setup = function() {
-		var mc = p.createCanvas(400, 400);
-		mc.parent('div2');
-
-		p.textFont('Futura, Avenir, Helvetica, Georgia, Sans-Serif');
-		
-		c.setBackgroundFill(192);
-		c.setClockFill(p.color('#BB33AA'));
-		c.setTextFill(0);
-		c.setClockType('a');
-
-		buton = p.createButton("Clock Type"); 
-		buton.parent('div2');
-		buton.position(120, 360);
-
-		buton.mousePressed(() => {clockType(2)});
-
-		
-	}
-	p.draw = function() {	
-		c.draw(p, 0);
-	}
-	p.getClock = function() {	
-		return c;
-	}
-	
-	
-}
-var sketch3 = function(p) {
-	p.x = 100;
-	p.y = 100;
-	var c = new Clock();
-	var buton;
-		
-	p.setup = function() {
-		var mc = p.createCanvas(400, 400);
-		mc.parent('div3');
-
-		p.textFont('Futura, Avenir, Helvetica, Georgia, Sans-Serif');
-		
-		c.setBackgroundFill(192);
-		c.setClockFill(p.color('#3333FF'));
-		c.setTextFill(0);
-		c.setClockType('a');
-
-		buton = p.createButton("Clock Type"); 
-		buton.parent('div3');
-		buton.position(120, 360);
-		buton.mousePressed(() => {clockType(3)});
-
-	}
-	p.draw = function() {	
-		c.draw(p, -4);
-	}
-	p.getClock = function() {	
-		return c;
-	}
-	
-}
-
-var c1 = new p5(sketch1);
-var c2 = new p5(sketch2);
-var c3 = new p5(sketch3);
-
-function changeClockType() {
-	c1.getClock().setClockType('r');
-	c2.getClock().setClockType('r');
-	c3.getClock().setClockType('r');
-}
-
-function clockType(c) {
-	switch(c) {
-		case 1: 
-			c1.getClock().setClockType('r');
-			break;
-		case 2:
-			c2.getClock().setClockType('r');
-			break;
-		case 3:
-			c3.getClock().setClockType('r');
-			break;
-	}
-}
-
-function clockStyle(c) {
-	switch(c) {
-		case '1': 
-			c1.getClock().setClockFill('#F9F8FA');
-			break;
-		case '2':
-			c1.getClock().setClockFill('#7F462C');
-			break;
-		case '3':
-			c1.getClock().setClockFill('#FF00FF');
-			break;
-		case '4':
-			c1.getClock().setClockFill('#4D2162');
-			break;
-	}
 }
