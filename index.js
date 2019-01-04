@@ -9,43 +9,47 @@ var sketch1 = function(p) {
 		mc.parent('div1');
 		//p.textFont('Futura, Avenir, Helvetica, Georgia, Sans-Serif');
 
-		c.setBackgroundFill(192);
+		//c.setBackgroundFill(192);
+		var bg = p.loadImage("");
+		c.setBackgroundFill(bg);
 		c.setClockFill(p.color('#F9F8FA'));
 		c.setTextFill(0);
 		c.setClockType('a');
 		c.setHoursOffset(-4);
-		
+				
 		var dropdown1 = p.createSelect();
-		dropdown1.option('Los Angeles', '1');
-		dropdown1.option('New York', '2');
-		dropdown1.option('Rio de Janeiro', '3');
+		dropdown1.option('Time Zone: Los Angeles', '1');
+		dropdown1.option('Time Zone: New York', '2');
+		dropdown1.option('Time Zone: Rio de Janeiro', '3');
 		dropdown1.parent('div1');
-		dropdown1.position(220,15);
+		dropdown1.class("metallic");
+		dropdown1.position(90,-10);
 		dropdown1.changed(() => {hoursOffset1(dropdown1.selected())});
 		
-		var text1 = p.createElement();
+		/*var text1 = p.createElement();
 		text1.html("Select time zone: "); 
 		text1.parent('div1');
-		text1.position(100, 15);
+		text1.position(100, 15); */
 		
 		var dropdown2 = p.createSelect(); 
-		dropdown2.option('Classic','1');
-		dropdown2.option('Retro','2');
-		dropdown2.option('Astro','3');
-		dropdown2.option('Turbo','4');
+		dropdown2.option('Clock Style: Classic','1');
+		dropdown2.option('Clock Style: Retro','2');
+		dropdown2.option('Clock Style: Astro','3');
+		dropdown2.option('Clock Style: Turbo','4');
 		dropdown2.parent('div1');
-		dropdown2.position(125, 360);
+		dropdown2.class("metallic");
+		dropdown2.position(105, 370);
 		dropdown2.changed(() => {clockStyle1(dropdown2.selected())});
 		
-		var text2 = p.createElement();
+		/*var text2 = p.createElement();
 		text2.html("Select clock style: ");
 		text2.parent('div1');
-		text2.position(5,360);
+		text2.position(5,360); */
 		
-	
 		buton = p.createButton("Clock Type"); 
 		buton.parent('div1');
-		buton.position(245, 355);
+		buton.class("metallic");
+		buton.position(145, 435);
 		buton.mousePressed(() => {clockType(1)});
 		
 	}
@@ -69,34 +73,40 @@ var sketch2 = function(p) {
 
 		//p.textFont('Futura, Avenir, Helvetica, Georgia, Sans-Serif');
 		
-		c.setBackgroundFill(192);
+		//c.setBackgroundFill(192);
+		var bg = p.loadImage("");
+		c.setBackgroundFill(bg);
+		
 		c.setClockFill(p.color('#BB33AA'));
 		c.setTextFill(0);
 		c.setClockType('a');
 		c.setHoursOffset(0);
-
+		
 		var text1 = p.createElement();
-		text1.html("London (GMT) "); 
+		text1.html("Time Zone: London (GMT)"); 
 		text1.parent('div2');
-		text1.position(150, 15);
+		text1.class("metallic");
+		text1.position(100, -10);
 		
 		var dropdown = p.createSelect(); 
-		dropdown.option('Classic','1');
-		dropdown.option('Retro','2');
-		dropdown.option('Astro','3');
-		dropdown.option('Turbo','4');
+		dropdown.option('Clock Style: Classic','1');
+		dropdown.option('Clock Style: Retro','2');
+		dropdown.option('Clock Style: Astro','3');
+		dropdown.option('Clock Style: Turbo','4');
 		dropdown.parent('div2');
-		dropdown.position(125, 360);
+		dropdown.class("metallic");
+		dropdown.position(105, 370);
 		dropdown.changed(() => {clockStyle2(dropdown.selected())});
 		
-		var text2 = p.createElement();
+		/*var text2 = p.createElement();
 		text2.html("Select clock style: ");
 		text2.parent('div2');
-		text2.position(5,360);
+		text2.position(5,360); */
 		
 		buton = p.createButton("Clock Type"); 
 		buton.parent('div2');
-		buton.position(245, 355);
+		buton.class("metallic");
+		buton.position(145, 435);
 		buton.mousePressed(() => {clockType(2)});
 			
 	}
@@ -121,42 +131,47 @@ var sketch3 = function(p) {
 
 		//p.textFont('Futura, Avenir, Helvetica, Georgia, Sans-Serif');
 		
-		c.setBackgroundFill(192);
+		//c.setBackgroundFill(192);
+		var bg = p.loadImage("");
+		c.setBackgroundFill(bg);
 		c.setClockFill(p.color('#3333FF'));
 		c.setTextFill(0);
 		c.setClockType('a');
 		c.setHoursOffset(7);
-		
+	
 		var dropdown1 = p.createSelect();
-		dropdown1.option('Moscow', '1');
-		dropdown1.option('Tokyo', '2');
-		dropdown1.option('Sydney', '3');
+		dropdown1.option('Time zone: Moscow', '1');
+		dropdown1.option('Time zone: Tokyo', '2');
+		dropdown1.option('Time zone: Sydney', '3');
 		dropdown1.parent('div3');
-		dropdown1.position(220,15);
+		dropdown1.class("metallic");
+		dropdown1.position(110,-10);
 		dropdown1.changed(() => {hoursOffset2(dropdown1.selected())});
 
-		var text1 = p.createElement();
+		/*var text1 = p.createElement();
 		text1.html("Select time zone: "); 
 		text1.parent('div3');
-		text1.position(100, 15);
+		text1.position(100, 15); */
 		
 		var dropdown2 = p.createSelect(); 
-		dropdown2.option('Classic','1');
-		dropdown2.option('Retro','2');
-		dropdown2.option('Astro','3');
-		dropdown2.option('Turbo','4');
+		dropdown2.option('Clock Style: Classic','1');
+		dropdown2.option('Clock Style: Retro','2');
+		dropdown2.option('Clock Style: Astro','3');
+		dropdown2.option('Clock Style: Turbo','4');
 		dropdown2.parent('div3');
-		dropdown2.position(125, 360);
+		dropdown2.class("metallic");
+		dropdown2.position(105, 370);
 		dropdown2.changed(() => {clockStyle3(dropdown2.selected())});
 		
-		var text2 = p.createElement();
+		/*var text2 = p.createElement();
 		text2.html("Select clock style: ");
 		text2.parent('div3');
-		text2.position(5,360);
+		text2.position(5,360); */
 		
 		buton = p.createButton("Clock Type"); 
 		buton.parent('div3');
-		buton.position(245, 355);
+		buton.class("metallic");
+		buton.position(145, 435);
 		buton.mousePressed(() => {clockType(3)});
 	}
 	p.draw = function() {	
