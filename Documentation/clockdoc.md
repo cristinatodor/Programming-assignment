@@ -1,4 +1,4 @@
-clock.js 
+# clock.js 
 
 <a name="Clock"></a>
 
@@ -115,8 +115,9 @@ The statements in draw() are executed until the program is stopped.
 | Param | Description |
 | --- | --- |
 | p | namespace to work with p5 in instance mode |
+ 
 
-index.js
+# index.js
 
 ## Functions
 
