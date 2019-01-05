@@ -1,44 +1,96 @@
+/**
+ * This class creates a clock
+ * 
+ */
 class Clock{
 	constructor() {
 		
 	} 
- 
-	setBackgroundFill(backgroundfill) {
-		this.backgroundfill = backgroundfill;
+	/**
+	* Sets the backgroundFill attribute 
+	*
+	* @param  backgroundFill the background colour
+	*/
+	setBackgroundFill(backgroundFill) {
+		this.backgroundFill = backgroundFill;
 	}
+	/**
+	* Returns the backgroundFill attribute 
+	*
+	*/
 	getBackgroundFill() {
-		return this.backgroundfill;
+		return this.backgroundFill;
 	}
 	
-	setClockFill(clockfill) {
-		this.clockfill = clockfill;
+	/**
+	* Sets the clockFill attribute 
+	*
+	* @param  clockFill the clock colour
+	*/
+	setClockFill(clockFill) {
+		this.clockFill = clockFill;
 	}
+	/**
+	* Returns the clockFill attribute 
+	*
+	*/
 	getClockFill() {
-		return this.clockfill;
+		return this.clockFill;
 	}
 	
-	setTextFill(textfill) {
-		this.textfill = textfill;
+	/**
+	* Sets the textFill attribute 
+	*
+	* @param  textFill the text colour
+	*/
+	setTextFill(textFill) {
+		this.textFill = textFill;
 	}
+	/**
+	* Returns the textFill attribute 
+	*
+	*/
 	getTextFill() {
-		return this.textfill;
+		return this.textFill;
 	}
 	
-	setClockType(clocktype) {
-		this.clocktype = clocktype;
+	/**
+	* Sets the clockType attribute 
+	*
+	* @param  clocktType the type of the clock
+	*/
+	setClockType(clockType) {
+		this.clockType = clockType;
 	}
+	/**
+	* Returns the clockType attribute 
+	*
+	*/
 	getClockType() {
-		return this.clocktype;
+		return this.clockType;
 	}
 	
+	/**
+	* Sets the hoursOffset attribute 
+	*
+	* @param  hoursOffset 
+	*/
 	setHoursOffset(hoursOffset) {
 		this.hoursOffset = hoursOffset;
 	}
+	/**
+	* Returns the clocktype attribute 
+	*
+	*/
 	getHoursOffset() {
 		return this.hoursOffset;
 	}
 	
-	
+	/**
+	* The statements in draw() are executed until the program is stopped.
+	*
+	* @param p namespace to work with p5 in instance mode
+	*/
 	draw(p) {
 
 		p.translate(p.width / 2.0, p.height / 2.0);
@@ -49,7 +101,7 @@ class Clock{
 		minutes = date.getMinutes(),
 		seconds = date.getSeconds(),
 		ms = date.getMilliseconds(),
-		day = date.getUTCDate(),
+		day = date.getDate(),
 		month = date.getMonth(),
 		year = date.getUTCFullYear(),
 		
@@ -153,8 +205,6 @@ class Clock{
 				p.text((i + 1)*5, v.x, v.y);
 			}
 		}
-		
-		
 				
 		// Date box
 		p.textSize(13);
@@ -166,11 +216,24 @@ class Clock{
 		
 		p.fill(0);
 		p.noStroke();
-		p.text(day, -30, 50);
-		p.text(".", -16, 50);
-		p.text(month+1, -14, 50);
-		p.text(".", 1, 50);
-		p.text(year, 6, 50);
+		if (day >= 10) {
+			p.text(day, -30, 50);
+		}
+		else {
+			p.text('0', -30, 50);
+			p.text(day, -22, 50);
+		}
+		p.text(".", -15, 50);
+		if (month+1 >= 10) {
+			p.text(month+1, -10, 50);
+		}
+		else {
+			p.text('0', -10, 50);
+			p.text(month+1, -2, 50);
+		}
+		
+		p.text(".", 5, 50);
+		p.text(year, 12, 50);
 		
 		//AM/PM box
 		p.fill('#ff9999'); 

@@ -1,6 +1,6 @@
 body {
 	margin: 0px;
-	background-image: url("World.png");
+	background-image: url("World3.jpg");
 	background-repeat: no-repeat;
     background-size: cover;
 	background-color: #cccccc;
@@ -8,7 +8,13 @@ body {
 }
 
 h1{
-	 color: #000000; font-family: 'Raleway',sans-serif; font-size: 44px; font-weight: 800; line-height: 64px; text-align: center; text-transform: uppercase; 
+	 color: #000000; 
+	 font-family: 'Raleway',sans-serif; 
+	 font-size: 44px; 
+	 font-weight: 800;
+	 line-height: 64px; 
+	 text-align: center; 
+	 text-transform: uppercase;  
 }
 
 .metallic {
@@ -61,12 +67,19 @@ table, tr, td {
 }
 
 div {
-  display: table-cell;
-  border: none !important;
-  position: relative;
-  color: black;
+	display: table-cell;
+	border: none !important;
+	position: relative;
+	color: black;
   
 }
 p {
- color: #000000; background-image: linear-gradient(100% 100% 90deg, #515151, #7A7A7A); font-family: 'Raleway',sans-serif; font-size: 14px; font-weight: 800; line-height: 12px; text-align: center; text-transform: uppercase; 
+	color: #000000; 
+	background-image: linear-gradient(100% 100% 90deg, #515151, #7A7A7A); 
+	font-family: 'Raleway',sans-serif; 
+	font-size: 14px; 
+	font-weight: 800; 
+	line-height: 12px; 
+	text-align: center; 
+	text-transform: uppercase; 
 }
