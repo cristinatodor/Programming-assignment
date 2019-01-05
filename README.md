@@ -15,4 +15,7 @@
 
 ### Licence
 
+* [Clock](#Clock)
+    * [.setBackgroundFill(backgroundFill)](#Clock+setBackgroundFill)
+
 
