@@ -3,6 +3,10 @@
  * 
  */
 class Clock{
+	/**
+	*Creates a Clock instance
+	*
+	*/
 	constructor() {
 		
 	} 
