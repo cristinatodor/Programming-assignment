@@ -138,7 +138,6 @@ class Clock{
 			}
 		}
 		
-		
 		// Numbers
 		p.textSize(25);
 		p.fill(this.getTextFill());
@@ -249,8 +248,6 @@ class Clock{
 			p.text("PM", -10, -25);
 		}
 		
-		
-		
 		// Hour hand
 		p.stroke(0);
 		p.strokeWeight(3);
@@ -270,7 +267,6 @@ class Clock{
 		p.stroke(255, 0, 0);
 		p.strokeWeight(1);
 		t = (seconds + ms / 1000 / 60) * p.TAU / 60 - p.HALF_PI;
-		//t = (seconds + ms / 1000) * TAU / 60 - HALF_PI;
 		v = p5.Vector.fromAngle(t);
 		v.mult(115);
 		p.line(0, 0, v.x, v.y); 

@@ -1,3 +1,11 @@
+# Project description
+The project consists of a HTML page, showing three clocks. 
+The middle one represents the GMT time zone, whilst the other two have different options, each of them corresponding to a certain time zone.
+
+The clocks were designed using Javascript and the p5 libraries. 
+In order to be able to build and control each clock idividually, p5 was used in instance mode. Thus, each clock represents a sketch.
+
+
 # clock.js 
 
 <a name="Clock"></a>
@@ -8,6 +16,7 @@ This class creates a clock
 **Kind**: global class  
 
 * [Clock](#Clock)
+    * [new Clock()](#new_Clock_new)
     * [.setBackgroundFill(backgroundFill)](#Clock+setBackgroundFill)
     * [.getBackgroundFill()](#Clock+getBackgroundFill)
     * [.setClockFill(clockFill)](#Clock+setClockFill)
@@ -19,6 +28,11 @@ This class creates a clock
     * [.setHoursOffset(hoursOffset)](#Clock+setHoursOffset)
     * [.getHoursOffset()](#Clock+getHoursOffset)
     * [.draw(p)](#Clock+draw)
+
+<a name="new_Clock_new"></a>
+
+### new Clock()
+Creates a Clock instance
 
 <a name="Clock+setBackgroundFill"></a>
 
@@ -115,7 +129,8 @@ The statements in draw() are executed until the program is stopped.
 | Param | Description |
 | --- | --- |
 | p | namespace to work with p5 in instance mode |
- 
+
+
 
 # index.js
 
