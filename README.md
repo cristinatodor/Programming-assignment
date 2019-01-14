@@ -14,7 +14,7 @@ p5 libraries :
 https://github.com/criiss31
 
 ### Licence
-The initial code that has been used can be found at https://www.openprocessing.org/sketch/387974
-
+The initial code that has been used can be found at https://www.openprocessing.org/sketch/387974.
+The project follows the [openprocessing.org](https://www.openprocessing.org/) [Terms of Service](https://www.openprocessing.org/home/tos).
 
 

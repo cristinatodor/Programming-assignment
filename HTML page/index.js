@@ -1,3 +1,4 @@
+// left Clock
 var sketch1 = function(p) {
 	var c = new Clock();
 	var buton;
@@ -6,13 +7,15 @@ var sketch1 = function(p) {
 		var mc = p.createCanvas(400, 400);
 		mc.parent('div1');
 		
-		var bg = p.loadImage("");
+		// set background
+		var bg = p.loadImage(""); 
 		c.setBackgroundFill(bg);
 		c.setClockFill(p.color('#F9F8FA'));
 		c.setTextFill(0);
 		c.setClockType('a');
 		c.setHoursOffset(-8);
-				
+		
+		// Time Zone selection		
 		var dropdown1 = p.createSelect();
 		dropdown1.option('Time Zone: Los Angeles', '1');
 		dropdown1.option('Time Zone: New York', '2');
@@ -21,7 +24,8 @@ var sketch1 = function(p) {
 		dropdown1.class("metallic");
 		dropdown1.position(90,-10);
 		dropdown1.changed(() => {hoursOffset1(dropdown1.selected())});
-				
+			
+		// Clock Style selection
 		var dropdown2 = p.createSelect(); 
 		dropdown2.option('Clock Style: Classic','1');
 		dropdown2.option('Clock Style: Retro','2');
@@ -32,6 +36,7 @@ var sketch1 = function(p) {
 		dropdown2.position(105, 370);
 		dropdown2.changed(() => {clockStyle1(dropdown2.selected())});
 		
+		// Clock Type changer
 		buton = p.createButton("Clock Type"); 
 		buton.parent('div1');
 		buton.class("metallic");
@@ -47,6 +52,7 @@ var sketch1 = function(p) {
 	}
 }
 
+// centre Clock
 var sketch2 = function(p) {
 	var c = new Clock();
 	var buton;
@@ -55,20 +61,22 @@ var sketch2 = function(p) {
 		var mc = p.createCanvas(400, 400);
 		mc.parent('div2');
 		
+		// set background
 		var bg = p.loadImage("");
 		c.setBackgroundFill(bg);
-		
 		c.setClockFill(p.color('#ff66b3'));
 		c.setTextFill(0);
 		c.setClockType('a');
 		c.setHoursOffset(0);
 		
+		// Time Zone
 		var text1 = p.createElement();
 		text1.html("Time Zone: London (GMT)"); 
 		text1.parent('div2');
 		text1.class("metallic");
 		text1.position(100, -10);
 		
+		// Clock Style selection
 		var dropdown = p.createSelect(); 
 		dropdown.option('Clock Style: Astro','3');
 		dropdown.option('Clock Style: Classic','1');
@@ -79,6 +87,7 @@ var sketch2 = function(p) {
 		dropdown.position(105, 370);
 		dropdown.changed(() => {clockStyle2(dropdown.selected())});
 		
+		// Clock Type changer
 		buton = p.createButton("Clock Type"); 
 		buton.parent('div2');
 		buton.class("metallic");
@@ -95,6 +104,8 @@ var sketch2 = function(p) {
 	
 	
 }
+
+// right Clock
 var sketch3 = function(p) {
 	var c = new Clock();
 	var buton;
@@ -103,6 +114,7 @@ var sketch3 = function(p) {
 		var mc = p.createCanvas(400, 400);
 		mc.parent('div3');
 
+		// set background
 		var bg = p.loadImage("");
 		c.setBackgroundFill(bg);
 		c.setClockFill(p.color('#8533ff'));
@@ -110,6 +122,7 @@ var sketch3 = function(p) {
 		c.setClockType('a');
 		c.setHoursOffset(3);
 	
+		// Time Zone selection	
 		var dropdown1 = p.createSelect();
 		dropdown1.option('Time zone: Moscow', '1');
 		dropdown1.option('Time zone: Tokyo', '2');
@@ -119,6 +132,7 @@ var sketch3 = function(p) {
 		dropdown1.position(110,-10);
 		dropdown1.changed(() => {hoursOffset2(dropdown1.selected())});
 
+		// Clock Style selection
 		var dropdown2 = p.createSelect(); 
 		dropdown2.option('Clock Style: Turbo','4');
 		dropdown2.option('Clock Style: Classic','1');
@@ -129,6 +143,7 @@ var sketch3 = function(p) {
 		dropdown2.position(105, 370);
 		dropdown2.changed(() => {clockStyle3(dropdown2.selected())});
 		
+		// Clock Type changer
 		buton = p.createButton("Clock Type"); 
 		buton.parent('div3');
 		buton.class("metallic");

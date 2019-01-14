@@ -5,6 +5,8 @@ The middle one represents the GMT time zone, whilst the other two have different
 The clocks were designed using Javascript and the p5 libraries. 
 In order to be able to build and control each clock idividually, p5 was used in instance mode. Thus, each clock represents a sketch.
 
+The HTML pages created using node.js (in order to generate jsdoc) can be found in the folder JS doc.  
+
 
 # clock.js 
 

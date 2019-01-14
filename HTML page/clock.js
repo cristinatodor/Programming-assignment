@@ -99,6 +99,7 @@ class Clock{
 
 		p.translate(p.width / 2.0, p.height / 2.0);
 
+		// initialize date and time 
 		var date = new Date();
 		date.setTime(date.getTime() + this.getHoursOffset()*3600*1000);
 		var hours = date.getHours(),
