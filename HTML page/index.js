@@ -163,86 +163,99 @@ var c1 = new p5(sketch1);
 var c2 = new p5(sketch2);
 var c3 = new p5(sketch3);
 
-/**
- * This function changes the clock colour for all of the clocks
- */
-function allClockFill() {
-	if (c1.getClock().getClockFill() == '#f9f8fa') {
-		c1.getClock().setClockFill('#ac3939');
-		c2.getClock().setClockFill('#ac3939');
-		c3.getClock().setClockFill('#ac3939');
-	}
-	else if (c1.getClock().getClockFill() == '#ac3939') {
-		c1.getClock().setClockFill('#ff66b3');
-		c2.getClock().setClockFill('#ff66b3');
-		c3.getClock().setClockFill('#ff66b3');
-	}
-	else if(c1.getClock().getClockFill() == '#ff66b3') {
-		c1.getClock().setClockFill('#8533ff');
-		c2.getClock().setClockFill('#8533ff');
-		c3.getClock().setClockFill('#8533ff');
-	}
-	else {
-		c1.getClock().setClockFill('#f9f8fa');
-		c2.getClock().setClockFill('#f9f8fa');
-		c3.getClock().setClockFill('#f9f8fa');
-	}
-	
-} 
 
-/**
- * This function changes the text colour for all of the clocks
- */
-function allTextFill() {
-	if (c1.getClock().getTextFill() == '#ff471a') {
-		c1.getClock().setTextFill('#00e6e6');
-		c2.getClock().setTextFill('#00e6e6');
-		c3.getClock().setTextFill('#00e6e6');
+document.addEventListener("DOMContentLoaded", function(){
+	var button1 = document.getElementById("clockFill");
+	
+	/**
+	* This function changes the clock colour for all of the clocks
+	*/
+	function allClockFill(){
+		if (c1.getClock().getClockFill() == '#f9f8fa') {
+			c1.getClock().setClockFill('#ac3939');
+			c2.getClock().setClockFill('#ac3939');
+			c3.getClock().setClockFill('#ac3939');
+		}
+		else if (c1.getClock().getClockFill() == '#ac3939') {
+			c1.getClock().setClockFill('#ff66b3');
+			c2.getClock().setClockFill('#ff66b3');
+			c3.getClock().setClockFill('#ff66b3');
+		}
+		else if(c1.getClock().getClockFill() == '#ff66b3') {
+			c1.getClock().setClockFill('#8533ff');
+			c2.getClock().setClockFill('#8533ff');
+			c3.getClock().setClockFill('#8533ff');
+		}
+		else {
+			c1.getClock().setClockFill('#f9f8fa');
+			c2.getClock().setClockFill('#f9f8fa');
+			c3.getClock().setClockFill('#f9f8fa');
+		}
 	}
-	else if (c1.getClock().getTextFill() == '#00e6e6') {
-		c1.getClock().setTextFill('#00e64d');
-		c2.getClock().setTextFill('#00e64d');
-		c3.getClock().setTextFill('#00e64d');
+	
+	button1.addEventListener("click", allClockFill);
+				
+	var button2 = document.getElementById("textFill");
+	
+	/**
+	* This function changes the text colour for all of the clocks
+	*/
+	function allTextFill() {
+		if (c1.getClock().getTextFill() == '#ff471a') {
+			c1.getClock().setTextFill('#00e6e6');
+			c2.getClock().setTextFill('#00e6e6');
+			c3.getClock().setTextFill('#00e6e6');
+		}
+		else if (c1.getClock().getTextFill() == '#00e6e6') {
+			c1.getClock().setTextFill('#00e64d');
+			c2.getClock().setTextFill('#00e64d');
+			c3.getClock().setTextFill('#00e64d');
+		}
+		else if (c1.getClock().getTextFill() == '#00e64d') {
+			c1.getClock().setTextFill('#000000');
+			c2.getClock().setTextFill('#000000');
+			c3.getClock().setTextFill('#000000');
+		}
+		else {
+			c1.getClock().setTextFill('#ff471a');
+			c2.getClock().setTextFill('#ff471a');
+			c3.getClock().setTextFill('#ff471a');
+		}
 	}
-	else if (c1.getClock().getTextFill() == '#00e64d') {
-		c1.getClock().setTextFill('#000000');
-		c2.getClock().setTextFill('#000000');
-		c3.getClock().setTextFill('#000000');
-	}
-	else {
-		c1.getClock().setTextFill('#ff471a');
-		c2.getClock().setTextFill('#ff471a');
-		c3.getClock().setTextFill('#ff471a');
+				
+	button2.addEventListener("click", allTextFill);
+
+	var button3 = document.getElementById("clockType");
+	
+	/**
+	* This function changes the clock type for all of the clocks
+	*/
+	function allClockType() {
+		if (c1.getClock().getClockType() == 'a'){
+			c1.getClock().setClockType('r');
+		}
+		else {
+			c1.getClock().setClockType('a');
+		}
+	
+		if (c2.getClock().getClockType() == 'a'){
+			c2.getClock().setClockType('r');
+		}
+		else {
+			c2.getClock().setClockType('a');
+		}
+	
+		if (c3.getClock().getClockType() == 'a'){
+			c3.getClock().setClockType('r');
+		}
+		else {
+			c3.getClock().setClockType('a');
+		}
 	}
 
-}
-
-/**
- * This function changes the clock type for all of the clocks
- */
-function allClockType() {
-	if (c1.getClock().getClockType() == 'a'){
-		c1.getClock().setClockType('r');
-	}
-	else {
-		c1.getClock().setClockType('a');
-	}
-	
-	if (c2.getClock().getClockType() == 'a'){
-		c2.getClock().setClockType('r');
-	}
-	else {
-		c2.getClock().setClockType('a');
-	}
-	
-	if (c3.getClock().getClockType() == 'a'){
-		c3.getClock().setClockType('r');
-	}
-	else {
-		c3.getClock().setClockType('a');
-	}
-	
-}
+	button3.addEventListener("click", allClockType);
+				
+});
 
 /**
  * This function changes the clock type 
